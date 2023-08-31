@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col col-lg-4"></div>
+    <div class="col col-lg-4">
+        <form method="post"><br><br><br>
+            <h1>Prueba técnica Farez Prieto</h1>
+            <h2>Ingresar</h2>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input  type="text" [(ngModel)]="Usuario" id="usuario" name="usuario" class="form-control"  />
+              <label class="form-label" for="form2Example1">Correo electrónico</label>
+            </div>
+          
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input  type="password" [(ngModel)]="Password" id="clave" name="clave" class="form-control"  />
+              <label class="form-label" for="form2Example2">contraseña</label>
+            </div>
+          
+            <div class="alert alert-danger" role="alert" *ngIf="this.error != ''">
+                {{this.error}}
+            </div>
+          
+            <!-- Submit button -->
+            <button type="button" class="btn btn-primary btn-block mb-4" (click)="login()">INGRESAR</button>
+
+          </form>
+    </div>
+    <div class="col col-lg-4"></div>
+</div>

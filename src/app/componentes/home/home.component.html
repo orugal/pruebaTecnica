@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col col-lg-2"></div>
+    <div class="col col-lg-8">
+        <h1>Prueba técnica Farez Prieto</h1>
+       <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th colspan="6">
+                        <div style="width:150px;float:left;margin:0 10px 0 0 ">
+                            Fecha Inicial
+                            <input type="date" [(ngModel)]="fechaInicial" class="form-control" placeholder="Fecha inicial" style="float:left;margin:0 5px 0 0 ">
+                        </div>
+                        <div style="width:150px;float:left;margin:0 10px 0 0 ">
+                            Fecha final
+                            <input type="date" [(ngModel)]="fechafinal" class="form-control" placeholder="Fecha final" style="float:left">
+                        </div>
+                        <div style="width:300px;float:left;margin:0 10px 0 0;padding:23px 0 0 0 ">
+                            <button type="text" class="btn btn-primary" (click)="filtrar()">FILTRAR</button>&nbsp;&nbsp;&nbsp;
+                            <button type="text" class="btn btn-primary" (click)="logout()">CERRAR SESION</button>
+                        </div>
+                    </th>
+                    <th colspan="3"><a (click)="crear()"  style="cursor:pointer" title="Editar"><i class="fa fa-plus"></i> CREAR EQUIPO</a></th>
+                </tr>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>ESTADIO</th>
+                    <th>SITIO WEB</th>
+                    <th>NACIONALIDAD</th>
+                    <th>AÑO FUNDACIÓN</th>
+                    <th>ENTRENADOR</th>
+                    <th>CAPACIDAD</th>
+                    <th>VALOR</th>
+                    <th>ACC</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let eq of listaEquipos">
+                    <td>{{eq.nombre}}</td>
+                    <td>{{eq.estadio}}</td>
+                    <td>{{eq.sitioWeb}}</td>
+                    <td>{{eq.nacionalidad}}</td>
+                    <td>{{eq.fundacion}}</td>
+                    <td>{{eq.entrenador}}</td>
+                    <td>{{eq.capacidad}}</td>
+                    <td>{{eq.valor}}</td>
+                    <td>
+                        <a (click)="editar(eq.id)"  style="cursor:pointer" title="Editar"><i class="fa fa-edit"></i></a>&nbsp;
+                        <a (click)="eliminar(eq.id)"  style="cursor:pointer" title="Eliminar"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+       </table>
+       
+       <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item" (click)="prevPage()">
+            <a class="page-link" style="cursor:pointer" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item" *ngFor="let page of getPagesToShow()">
+            <a class="page-link" style="cursor:pointer"  [class.active]="page === currentPage" (click)="goToPage(page)">{{ page }}</a>
+          </li>
+          <li class="page-item" (click)="nextPage()">
+            <a class="page-link" style="cursor:pointer" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+
+    </div>
+    <div class="col col-lg-2"></div>
+</div>

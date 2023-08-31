@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col col-lg-4"></div>
+    <div class="col col-lg-4">
+        <form method="post"><br><br><br>
+            <h1>Crear equipo</h1>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input  type="text" [(ngModel)]="datosEquipo.nombre" id="nombre" name="nombre" class="form-control"  />
+              <label class="form-label" for="form2Example1">Nombre</label>
+            </div>
+            <div class="form-outline mb-4">
+              <input  type="text" [(ngModel)]="datosEquipo.estadio" id="estadio" name="estadio" class="form-control"  />
+              <label class="form-label" for="form2Example1">Estadio</label>
+            </div>
+            <div class="form-outline mb-4">
+              <input  type="text" [(ngModel)]="datosEquipo.sitioWeb" id="sitioWeb" name="sitioWeb" class="form-control"  />
+              <label class="form-label" for="form2Example1">Sitio web</label>
+            </div>
+            <div class="form-outline mb-4">
+              <input  type="text" [(ngModel)]="datosEquipo.nacionalidad" id="nacionalidad" name="nacionalidad" class="form-control"  />
+              <label class="form-label" for="form2Example1">Nacionalidad</label>
+            </div>
+            <div class="form-outline mb-4">
+              <input  type="date" [(ngModel)]="datosEquipo.fundacion" id="fundacion" name="fundacion" class="form-control"  />
+              <label class="form-label" for="form2Example1">Fecha de fundacion</label>
+            </div>
+            <div class="form-outline mb-4">
+              <input  type="text" [(ngModel)]="datosEquipo.entrenador" id="entrenador" name="entrenador" class="form-control"  />
+              <label class="form-label" for="form2Example1">Entrenador</label>
+            </div>
+            <div class="form-outline mb-4">
+              <input  type="text" [(ngModel)]="datosEquipo.capacidad" id="capacidad" name="capacidad" class="form-control"  />
+              <label class="form-label" for="form2Example1">Capacidad</label>
+            </div>
+            <div class="form-outline mb-4">
+              <input  type="text" [(ngModel)]="datosEquipo.valor" id="valor" name="valor" class="form-control"  />
+              <label class="form-label" for="form2Example1">Valor</label>
+            </div>
+    
+          
+            <div class="alert alert-danger" role="alert" *ngIf="this.error != ''">
+                {{this.error}}
+            </div>
+          
+            <!-- Submit button -->
+            <button type="button" class="btn btn-secondary btn-block mb-4" (click)="regresar()">REGRESAR</button>&nbsp;
+            <button type="button" class="btn btn-primary btn-block mb-4" (click)="editar()">CREAR</button>
+
+          </form>
+    </div>
+    <div class="col col-lg-4"></div>
+</div>

@@ -3,7 +3,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "outDir": "./dist/out-tsc","paths": {
+      "@ng-bootstrap/ng-bootstrap": ["node_modules/@ng-bootstrap/ng-bootstrap/index"]
+    },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
